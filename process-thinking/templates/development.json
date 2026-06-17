@@ -1,0 +1,105 @@
+{
+  "name": "开发流程",
+  "type": "development",
+  "description": "适用于软件开发、功能实现",
+  "steps": [
+    {
+      "step": 1,
+      "name": "需求分析",
+      "description": "理解需求，确认目标",
+      "tasks": [
+        "理解需求",
+        "确认目标",
+        "识别约束"
+      ],
+      "estimated_time": "60分钟",
+      "dependencies": []
+    },
+    {
+      "step": 2,
+      "name": "设计",
+      "description": "架构和接口设计",
+      "tasks": [
+        "架构设计",
+        "接口设计",
+        "数据库设计"
+      ],
+      "estimated_time": "90分钟",
+      "dependencies": [
+        1
+      ]
+    },
+    {
+      "step": 3,
+      "name": "编码",
+      "description": "编写和审查代码",
+      "tasks": [
+        "编写代码",
+        "代码审查",
+        "单元测试"
+      ],
+      "estimated_time": "180分钟",
+      "dependencies": [
+        2
+      ]
+    },
+    {
+      "step": 4,
+      "name": "测试",
+      "description": "功能和性能测试",
+      "tasks": [
+        "功能测试",
+        "性能测试",
+        "安全测试"
+      ],
+      "estimated_time": "120分钟",
+      "dependencies": [
+        3
+      ]
+    },
+    {
+      "step": 5,
+      "name": "部署",
+      "description": "部署上线",
+      "tasks": [
+        "环境准备",
+        "部署上线",
+        "监控配置"
+      ],
+      "estimated_time": "60分钟",
+      "dependencies": [
+        4
+      ]
+    },
+    {
+      "step": 6,
+      "name": "监控",
+      "description": "监控运行状态",
+      "tasks": [
+        "性能监控",
+        "错误监控",
+        "用户反馈"
+      ],
+      "estimated_time": "持续",
+      "dependencies": [
+        5
+      ]
+    },
+    {
+      "step": 7,
+      "name": "优化",
+      "description": "持续优化",
+      "tasks": [
+        "性能优化",
+        "功能优化",
+        "用户体验优化"
+      ],
+      "estimated_time": "持续",
+      "dependencies": [
+        6
+      ]
+    }
+  ],
+  "total_steps": 7,
+  "estimated_total_time": "约9小时"
+}

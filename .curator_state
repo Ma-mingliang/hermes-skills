@@ -1,0 +1,9 @@
+{
+  "last_report_path": "C:\\Users\\lenovo_mml\\.hermes\\logs\\curator\\20260610-154839",
+  "last_run_at": "2026-06-10T15:48:39.730818+00:00",
+  "last_run_duration_seconds": 598.586291,
+  "last_run_summary": "auto: no changes; llm: All 5 verification checks passed. Let me write the final summary.\n\n## Consolidation Pass Summary\n\n**Starting state**: 7 agent-created skills, no pinned skills.\n\n**Clusters identified and processed**:\n\n### 1. Daily News Cluster → NEW umbrell…\narchived 3 skill(s):\n  • skillopt-prompt-optimization → hermes-agent\n  • agent-daily-report — pruned (stale)\n  • ai-daily-digest — pruned (stale)\nfull report: hermes curator status\nkeep an umbrella stable: hermes curator pin hermes-agent",
+  "last_run_summary_shown_at": null,
+  "paused": false,
+  "run_count": 2
+}

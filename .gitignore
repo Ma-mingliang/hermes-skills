@@ -1,0 +1,15 @@
+# Exclude backup archives
+.curator_backups/
+
+# Exclude nested .git directories
+**/.git/
+
+# Exclude lock files
+*.lock
+
+# Exclude hub internal state
+.hub/lock.json
+.hub/audit.log
+
+# Exclude usage tracking
+.usage.json.lock

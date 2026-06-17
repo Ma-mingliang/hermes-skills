@@ -1,0 +1,47 @@
+{
+  "name": "自定义测试流程",
+  "type": "custom",
+  "description": "自定义流程: 自定义测试流程",
+  "steps": [
+    {
+      "step": 1,
+      "name": "准备",
+      "description": "准备工作",
+      "tasks": [
+        "收集资料",
+        "制定计划"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": []
+    },
+    {
+      "step": 2,
+      "name": "执行",
+      "description": "执行任务",
+      "tasks": [
+        "按计划执行",
+        "记录进度"
+      ],
+      "estimated_time": "60分钟",
+      "dependencies": [
+        1
+      ]
+    },
+    {
+      "step": 3,
+      "name": "总结",
+      "description": "总结经验",
+      "tasks": [
+        "总结经验",
+        "改进方法"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": [
+        2
+      ]
+    }
+  ],
+  "total_steps": 3,
+  "created_at": "2026-05-30T17:31:49.224904",
+  "id": "e8886e9c"
+}

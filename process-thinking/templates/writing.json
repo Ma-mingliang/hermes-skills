@@ -1,0 +1,105 @@
+{
+  "name": "写作流程",
+  "type": "writing",
+  "description": "适用于写作、博客、文章",
+  "steps": [
+    {
+      "step": 1,
+      "name": "选题",
+      "description": "确定写作主题",
+      "tasks": [
+        "确定主题",
+        "分析受众",
+        "评估价值"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": []
+    },
+    {
+      "step": 2,
+      "name": "大纲",
+      "description": "设计文章结构",
+      "tasks": [
+        "结构设计",
+        "内容规划",
+        "逻辑梳理"
+      ],
+      "estimated_time": "45分钟",
+      "dependencies": [
+        1
+      ]
+    },
+    {
+      "step": 3,
+      "name": "初稿",
+      "description": "撰写初稿",
+      "tasks": [
+        "撰写内容",
+        "补充细节",
+        "初步校对"
+      ],
+      "estimated_time": "120分钟",
+      "dependencies": [
+        2
+      ]
+    },
+    {
+      "step": 4,
+      "name": "修改",
+      "description": "优化内容",
+      "tasks": [
+        "内容优化",
+        "结构调整",
+        "语言润色"
+      ],
+      "estimated_time": "60分钟",
+      "dependencies": [
+        3
+      ]
+    },
+    {
+      "step": 5,
+      "name": "校对",
+      "description": "最终检查",
+      "tasks": [
+        "语法检查",
+        "格式调整",
+        "最终确认"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": [
+        4
+      ]
+    },
+    {
+      "step": 6,
+      "name": "发布",
+      "description": "发布内容",
+      "tasks": [
+        "选择平台",
+        "发布内容",
+        "推广宣传"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": [
+        5
+      ]
+    },
+    {
+      "step": 7,
+      "name": "反馈",
+      "description": "收集和分析反馈",
+      "tasks": [
+        "收集反馈",
+        "分析效果",
+        "持续改进"
+      ],
+      "estimated_time": "持续",
+      "dependencies": [
+        6
+      ]
+    }
+  ],
+  "total_steps": 7,
+  "estimated_total_time": "约5小时"
+}

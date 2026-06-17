@@ -1,0 +1,247 @@
+# Agent Daily Report v3.1 Config Template
+# Copy to config.yaml and customize
+
+system:
+  name: agent-daily-report
+  version: "3.1.0"
+  description: "Agent 工程情报日报系统"
+  target: "Hermes / OpenClaw / Claude Code / Coding Agent / MCP / Workflow / Skill"
+
+runtime:
+  timezone: "Asia/Tokyo"
+  report_date_mode: "local_date"
+  collection_window:
+    default_hours: 24
+    hackernews_hours: 72
+    github_created_days: 30
+    github_pushed_days: 14
+    reddit_time_filter: "day"
+    producthunt_days: 1
+    v2ex_hours: 48
+    linuxdo_hours: 48
+    nodeseek_hours: 48
+
+sources:
+  github:
+    enabled: true
+    weight: 0.35
+  hackernews:
+    enabled: true
+    weight: 0.15
+  developer_communities:
+    enabled: true
+    weight: 0.2
+    sub_sources:
+      linuxdo:
+        enabled: true
+        weight: 0.1
+      v2ex:
+        enabled: true
+        weight: 0.06
+      nodeseek:
+        enabled: true
+        weight: 0.04
+  model_docs:
+    enabled: true
+    weight: 0.1
+  reddit:
+    enabled: true
+    weight: 0.08
+  producthunt:
+    enabled: true
+    weight: 0.05
+  huggingface:
+    enabled: true
+    weight: 0.04
+  framework_docs:
+    enabled: true
+    weight: 0.03
+  arxiv:
+    enabled: false
+    schedule: weekly
+
+github:
+  enabled: true
+  weight: 0.35
+  auth_required: false
+  token_optional: true
+  token_env_candidates:
+  - GITHUB_TOKEN
+  - GITHUB_PERSONAL_ACCESS_TOKEN
+  request:
+    base_url: "https://api.github.com"
+    timeout_seconds: 30
+    min_interval_seconds: 1
+    max_retries: 3
+    user_agent: "HermesAgentDailyReport/3.0"
+    api_version_header: "2022-11-28"
+  unauthenticated_fallback:
+    enabled: true
+    max_search_results: 20
+    disable_expensive_calls: true
+    disable_realtime_growth: true
+  search:
+    enabled: true
+    days_created: 30
+    days_pushed: 14
+    min_stars: 20
+    max_results_per_query: 30
+    queries:
+    - agent
+    - ai-agent
+    - mcp
+    - model-context-protocol
+    - workflow
+    - coding-agent
+    - browser-agent
+    - tool-use
+  watch_repos:
+    enabled: true
+    report_only_on_change: true
+    repos:
+    - OpenHands/OpenHands
+    - langchain-ai/langgraph
+    - microsoft/autogen
+    - crewAIInc/crewAI
+    - pydantic/pydantic-ai
+    - modelcontextprotocol/servers
+    - browser-use/browser-use
+    - aider-AI/aider
+  realtime_growth:
+    enabled: true
+    max_repos_per_run: 50
+  lifecycle:
+    enabled: true
+    tracking_budget:
+      max_active_tracked_repos: 300
+      max_new_discoveries_per_day: 50
+
+v2ex:
+  enabled: true
+  strategy: api
+  auth_required: false
+  base_url: "https://www.v2ex.com"
+  nodes:
+  - programmer
+  - create
+  - qna
+  - python
+  - ai
+  limits:
+    max_total_items: 200
+
+scoring:
+  weights:
+    relevance: 30
+    popularity: 20
+    freshness: 15
+    growth: 15
+    utility: 20
+  thresholds:
+    S: 85
+    A: 70
+    B: 55
+    C: 40
+    D: 0
+
+report:
+  max_items_per_section: 10
+  min_score: 55
+  output_dir: data/reports
+
+report_layout:
+  total_selected_items:
+    target: 35
+    max: 45
+  sections:
+    top_events:
+      target_items: 5
+      max_items: 6
+    github_growth:
+      target_items: 5
+      max_items: 8
+    agent_coding_agent:
+      target_items: 4
+      max_items: 6
+    mcp:
+      target_items: 3
+      max_items: 5
+    workflow_skill:
+      target_items: 3
+      max_items: 5
+    tools_connectors:
+      target_items: 3
+      max_items: 5
+    model_api:
+      target_items: 3
+      max_items: 5
+    community_signals:
+      target_items: 3
+      max_items: 5
+    producthunt:
+      target_items: 2
+      max_items: 4
+    insights:
+      target_items: 3
+      max_items: 3
+    recommendations:
+      target_items: 3
+      max_items: 5
+
+quality_gates:
+  enabled: true
+  item_level:
+    require_url: true
+    min_title_length: 8
+    drop_empty_title: true
+    drop_empty_summary: true
+  report_level:
+    min_score_for_report: 55
+    max_same_source_ratio: 0.45
+    max_same_category_ratio: 0.35
+  low_quality_patterns:
+  - "求推荐"
+  - "水一贴"
+  - "闲聊"
+
+cost_signal:
+  enabled: true
+
+empty_report_policy:
+  enabled: true
+  low_signal_threshold: 10
+  generate_report_even_if_empty: true
+  do_not_fill_low_quality_items: true
+
+deduplication:
+  same_source:
+    enabled: true
+    url_exact_match: true
+    title_similarity_threshold: 0.90
+  cross_source:
+    enabled: true
+    merge_as_related_items: true
+    title_similarity_threshold: 0.85
+    boost_per_related_source: 3
+    max_cross_source_bonus: 10
+
+negative_keywords:
+- real estate agent
+- travel agent
+- insurance agent
+- sales agent
+- hiring
+- job
+- recruiting
+- coupon
+- giveaway
+
+logging:
+  level: INFO
+  file: logs/run.log
+
+state:
+  daily_state: state/daily_state.json
+  github_repo_state: state/github_repo_state.json
+  model_docs_state: state/model_docs_state.json
+  source_state: state/source_state.json

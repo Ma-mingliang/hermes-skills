@@ -1,0 +1,116 @@
+{
+  "name": "学习流程",
+  "type": "learning",
+  "description": "适用于学习新知识、新技能",
+  "steps": [
+    {
+      "step": 1,
+      "name": "预习",
+      "description": "提前了解学习内容",
+      "tasks": [
+        "阅读教材",
+        "标记疑问",
+        "准备问题"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": [],
+      "task_specific": "学习Python"
+    },
+    {
+      "step": 2,
+      "name": "听课",
+      "description": "认真听讲，记录重点",
+      "tasks": [
+        "认真听讲",
+        "记录重点",
+        "解决疑问"
+      ],
+      "estimated_time": "45分钟",
+      "dependencies": [
+        1
+      ],
+      "task_specific": "学习Python"
+    },
+    {
+      "step": 3,
+      "name": "练习",
+      "description": "通过练习巩固知识",
+      "tasks": [
+        "完成作业",
+        "巩固知识",
+        "发现问题"
+      ],
+      "estimated_time": "60分钟",
+      "dependencies": [
+        2
+      ],
+      "task_specific": "学习Python"
+    },
+    {
+      "step": 4,
+      "name": "复习",
+      "description": "回顾和整理知识点",
+      "tasks": [
+        "回顾笔记",
+        "整理知识点",
+        "查漏补缺"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": [
+        3
+      ],
+      "task_specific": "学习Python"
+    },
+    {
+      "step": 5,
+      "name": "考试",
+      "description": "检验学习效果",
+      "tasks": [
+        "检验学习效果",
+        "发现薄弱环节",
+        "调整学习策略"
+      ],
+      "estimated_time": "90分钟",
+      "dependencies": [
+        4
+      ],
+      "task_specific": "学习Python"
+    },
+    {
+      "step": 6,
+      "name": "复盘",
+      "description": "分析和总结",
+      "tasks": [
+        "分析考试结果",
+        "总结经验教训",
+        "改进学习方法"
+      ],
+      "estimated_time": "30分钟",
+      "dependencies": [
+        5
+      ],
+      "task_specific": "学习Python"
+    },
+    {
+      "step": 7,
+      "name": "单元测验",
+      "description": "综合检验掌握程度",
+      "tasks": [
+        "综合检验",
+        "确认掌握程度",
+        "准备下一单元"
+      ],
+      "estimated_time": "60分钟",
+      "dependencies": [
+        6
+      ],
+      "task_specific": "学习Python"
+    }
+  ],
+  "total_steps": 7,
+  "estimated_total_time": "5小时15分钟",
+  "task": "学习Python",
+  "original_template": "learning",
+  "id": "ce7c7dd1",
+  "created_at": "2026-05-30T17:31:49.208030"
+}

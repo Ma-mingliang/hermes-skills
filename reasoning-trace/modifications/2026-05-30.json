@@ -1,0 +1,35 @@
+[
+  {
+    "task_id": "example_001",
+    "timestamp": "2026-05-30T11:46:06.517086",
+    "user_feedback": "下次应该先检查用户是否有现有配置，再创建新配置",
+    "related_steps": [
+      3
+    ],
+    "modification_type": "add_check",
+    "priority": "high",
+    "applied": false
+  },
+  {
+    "task_id": "test_001",
+    "timestamp": "2026-05-30T11:48:34.094701",
+    "user_feedback": "下次应该先检查用户输入再执行",
+    "related_steps": [
+      1
+    ],
+    "modification_type": "add_validation",
+    "priority": "high",
+    "applied": false
+  },
+  {
+    "task_id": "test_001",
+    "timestamp": "2026-05-30T15:46:58.588041",
+    "user_feedback": "下次应该先检查用户输入再执行",
+    "related_steps": [
+      1
+    ],
+    "modification_type": "add_validation",
+    "priority": "high",
+    "applied": false
+  }
+]
